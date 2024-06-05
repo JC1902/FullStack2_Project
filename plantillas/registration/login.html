@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block titulo %} - Iniciar Sesión {% endblock titulo %}
+
+{% block titulo %}
+
+    <h2>Iniciar Sesión</h2>
+    <form method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Acceder</button>
+    </form>
+
+{% endblock titulo %}

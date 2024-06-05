@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block titulo %} - Cerrar Sesión {% endblock titulo %}
+
+{% block contenido %}
+    <h2>Cerrar Sesión</h2>
+    <p>¿Desea salir de la sesión actual?</p>
+    <form method="post" action="{% url 'account_logout' %}">{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Salir</button>
+    </form>
+{% endblock contenido %}
