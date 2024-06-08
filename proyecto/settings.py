@@ -143,3 +143,6 @@ AUTH_USER_MODEL = 'cuentas.Usuario'
 #Estilos a los formularios con crispy. Instalacion de bootstrap
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+MEDIA_URL = '/recursos/'
+MEDIA_ROOT=BASE_DIR / 'recursos'
