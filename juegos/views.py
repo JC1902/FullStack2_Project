@@ -1,15 +1,10 @@
 from django.views.generic import ListView  , DetailView , CreateView
 from .models import Juego , Resenha
 from .forms import FormularioNuevaResenha
-from django.urls import reverse_lazy
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
-
-
-
-
 
 class VistaListaJuegos ( ListView ):
     model = Juego
