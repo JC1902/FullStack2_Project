@@ -3,8 +3,13 @@
 {% block titulo %}- Dejar Reseña {% endblock %}
 
 {% block contenido %}
+
+
+
 <div class="container-sm bg-dark" >
-    <h2 class="text-center text-white">Dejar Reseña </h2>
+    <h1 class="text-center text-white py-2 font-weight-bold ">Dejar Reseña </h1>
+
+    
     <form class="w-100" method="post">
 
         {% csrf_token %}
@@ -13,8 +18,8 @@
        
        
 
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+        <div class="text-center py-4">
+            <button type="submit" class="btn btn-success w-50">Enviar</button>
         </div>
     </form>
 </div>
