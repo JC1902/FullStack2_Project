@@ -14,9 +14,21 @@
         <p> sinopsis : {{ juego.sinopsis }} </p>
         <p> Precio : {{ juego.precio }}</p>
 
+        <div>
+            <h3> Reseñas </h3>
+            <ul>
+                {% for  resenha in juego.resenhas.all %}
+                    <li> {{ resenha.resenha }} <br>
+                         - {{ resenha.autor }}
+                    </li>
+                    
+                {% endfor %}
+            </ul>
+        </div>
        
     </div>
 
+    
    
    
     
