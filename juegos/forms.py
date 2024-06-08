@@ -6,6 +6,7 @@ class FormularioNuevaResenha(forms.ModelForm):
     class Meta:
         model = Resenha
         fields = ['resenha']
+        
         widgets = {
-            'resenha': forms.Textarea(attrs={'rows': 2, 'cols': 40}),
+            'resenha': forms.Textarea(attrs={'rows': 2, 'cols': 125}),
         }

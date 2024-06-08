@@ -4,19 +4,24 @@
 {% block titulo %} - Juegos {% endblock titulo %}
 
 {% block contenido %}
-    <div class="container shadow-lg bg-dark">
-        <h1 class="text-white "> Listado de Juegos </h1>
+    <div class="container shadow-lg bg-dark  py-2 ms-2 rounded-3">
+        <h1 class="text-white ms-3 text-center"> Listado de Juegos </h1>
+    </div>
+    <br>
+    <div class="container shadow-lg bg-dark rounded-3">
+        
         <br>
     
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-4 ms-2 px-3">
             {% for juego in lista_juegos %}
             <div class="col  p">
-                <div class="card h-100 ">
+                <div class="card h-100  ">
                     <img class="card-img-top" src="{{ juego.portada.url }}" alt="Card image cap">
                     <div class="card-body bg-dark text-white ">
-                        <h5 class="card-title">{{ juego.titulo }}</h5>
+                        <a href="{{ juego.get_absolute_url }}" class="btn btn-primary w-100 card-title">{{ juego.titulo }}</a>
+                        
                         <p class="card-text">{{ juego.sinopsis }}</p>
-                        <a href="{{ juego.get_absolute_url }}" class="btn btn-primary w-100">Ver</a>
+                       
                     </div>
                 </div>
             </div>

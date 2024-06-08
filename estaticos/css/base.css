@@ -7,3 +7,15 @@
     object-fit: cover; 
 }
 
+
+.container-custom {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    width: 100%;
+    max-width: 500px; 
+}
+

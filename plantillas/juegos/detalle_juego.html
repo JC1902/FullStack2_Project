@@ -6,26 +6,35 @@
 {% block contenido %}
    
     <div class="" >
+
+        <div class="container shadow-lg bg-dark  py-2 ms-2 rounded-3">
+            <h1 class="text-white ms-3 text-center"> {{ juego.titulo }}  </h1>
+        </div>
         
-        <img src="{{ juego.portada.url }}" alt="{{ juego.titulo }}">
+        <img class="img-fluid py-4 w-100 bg-d px-3" src="{{ juego.portada.url }}" alt="{{ juego.titulo }}">
 
+        <div class="container shadow-lg bg-dark  py-2 ms-2 rounded-3">
+            <p class="text-white ms-3 "> {{ juego.sinopsis }}  </p>
+            <p class="text-white ms-3 "> Precio : {{ juego.precio }}</p>
+        </div>
+      
+        
+       
 
-        <h2> <a href=""> {{ juego.titulo }} </a> </h2> 
-        <p> sinopsis : {{ juego.sinopsis }} </p>
-        <p> Precio : {{ juego.precio }}</p>
+        <div class="py-4">
 
-        <div>
-            <h3> Reseñas </h3>
-            <ul>
+            <h3 class="container shadow-lg bg-primary  py-2 ms-2 rounded-3 text-white text-center "> Reseñas </h3>
+            <ul class="py-2">
                 {% for  resenha in juego.resenhas.all %}
-                    <li> {{ resenha.resenha }} <br>
+                    <p class="shadow text-center "> {{ resenha.resenha }} <br>
                          - {{ resenha.autor }}
-                    </li>
+                    </p>
+                    <br>
                     
                 {% endfor %}
             </ul>
 
-            <a href="{% url 'dejar_resenha' juego.id %}" class="btn btn-primary">Dejar Reseña</a>
+            <a href="{% url 'dejar_resenha' juego.id %}" class="btn btn-success w-100 ms-3">Dejar Reseña</a>
         </div>
        
     </div>
