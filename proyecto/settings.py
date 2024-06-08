@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent 
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hn_l)w^n4-^_#geqy2_m*xd1*2gs3ym^uj6(wp*j$af&c8@vi-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #Terceros
     'crispy_forms',
     'crispy_bootstrap5',
 
+    #Propias
     'cuentas.apps.CuentasConfig',
-    'paginas.apps.PaginasConfig'
+    'paginas.apps.PaginasConfig',
+    'juegos.apps.JuegosConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [ BASE_DIR / 'estaticos' ]
+STATIC_ROOT = BASE_DIR/ 'archivos_estaticos'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
