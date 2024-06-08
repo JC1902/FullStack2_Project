@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% block titulo %} - Busqueda {% endblock %}
+
+{% block contenido %}
+
+    <h1 class="title"> Resultados de Busqueda </h1>
+
+    {% for juego in lista_juegos %}
+    
+        <div>
+            <h3> <a href="{{ juego.get_absolute_url  }}"> {{ juego.titulo }} </a> </h3>
+            <p> Precio : {{ juego.precio }}</p>
+        </div>
+
+    {% endfor %}
+{% endblock contenido %}
