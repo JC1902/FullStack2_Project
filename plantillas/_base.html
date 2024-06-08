@@ -58,7 +58,7 @@
                                             <polyline points="16 17 21 12 16 7"></polyline>
                                             <line x1="21" x2="9" y1="12" y2="12"></line>
                                         </svg>
-                                        <a href="{% url 'logout' %}"><span>Logout</span></a>
+                                        <a href="{% url 'logout' %}" class="span"><span>Logout</span></a>
                                     </a>
                                 </li>
                             </ul>
@@ -66,9 +66,6 @@
                     {% else %}
                         <a class="btn btn-outline-primary text-white border-primary px-3 py-2 rounded me-3" href="{% url 'login' %}">Login</a>
                     {% endif %}
-                    
-
-
                     
                 </div>
             </div>

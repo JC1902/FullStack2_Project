@@ -12,7 +12,7 @@ class UsuarioAdmin( UserAdmin ):
         'email',
         'username',
         'edad',
-        'is_staff',
+        'is_superuser',
     ]
 
     fieldsets = UserAdmin.fieldsets + ( ( None, { 'fields': ( 'edad', ) } ), )
