@@ -143,3 +143,6 @@ AUTH_USER_MODEL = 'cuentas.Usuario'
 #Estilos a los formularios con crispy. Instalacion de bootstrap
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+#Redireccion de sitios
+LOGIN_REDIRECT_URL = 'inicio'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'inicio'
