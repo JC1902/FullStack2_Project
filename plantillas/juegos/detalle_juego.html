@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+
+{% block titulo %} - {{ juego.titulo }} {% endblock titulo %}
+
+{% block contenido %}
+   
+    <div class="book-detail" >
+        
+        <h2> <a href=""> {{ juego.titulo }} </a> </h2> 
+        <p> sinopsis : {{ juego.sinopsis }} </p>
+        <p> Precio : {{ juego.precio }}</p>
+
+       
+    </div>
+
+   
+   
+    
+{% endblock contenido %}

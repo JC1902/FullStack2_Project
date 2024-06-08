@@ -7,7 +7,7 @@
     <h1> Listado de Juegos </h1>
     {% for juego in lista_juegos %}
         <div>
-            <h2> <a href="#">{{ juego.titulo }}</a></h2>
+            <h2> <a href="{{ juego.get_absolute_url }}">{{ juego.titulo }}</a></h2>
         </div>
     {% endfor %}
     
