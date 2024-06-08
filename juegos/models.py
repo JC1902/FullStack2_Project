@@ -1,6 +1,8 @@
 from django.db import models
+from django.urls  import reverse
 import uuid 
 
+ 
 
 # Create your models here.
 class Juego( models.Model ):
@@ -18,6 +20,10 @@ class Juego( models.Model ):
 
     def __str__(self) -> str:
         return self.titulo
+    
+
+    def get_absolute_url(self):
+        return reverse("detalle_juego", args=[ str(self.id) ])
 
   
     
