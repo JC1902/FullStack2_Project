@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block titulo %}- Dejar Reseña {% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <h2>Dejar Reseña </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}
