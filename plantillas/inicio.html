@@ -5,51 +5,72 @@
 
 {% block contenido %}
     
-    
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo negro transparente */
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark text-white">
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('{% static 'img/eldenring.png' %}');">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/eldenring.png' %}" class="d-block w-100" alt="Imagen 1">
+                    <div class="carousel-caption" style="position: absolute; top: 50%; transform: translateY(-50%);">
+                        <h3 class="py-4">ZTEAM 1</h3>
 
-                    <div class="col-md-5 p-lg-5 mx-auto my-5">
-                        <h1 class="display-4 fw-normal">ZTEAM</h1>
-                        <p class="lead fw-normal">Ya puedes revisar la gran variedad de juegos que se encuentran alojados en esta pagina</p>
-                        <a class="btn btn-outline-primary" href="{% url 'lista_juegos'%}">Lista de Juegos</a>
+                        <p>Puedes dirigirte a ver el listado de Juegos</p>
+                        <a href="{% url 'lista_juegos'%}" class="btn btn-primary ">Lista de Videojuegos</a>
+                    </div>
+                    
+                </div>
+                <div class="carousel-item bg-dark">
+                    <img src="{% static 'img/review.png' %}"  class="d-block w-100" alt="Imagen 2">
+                    <div class="carousel-caption d-none d-md-block " >
+                        <h3>Reseñas</h3>
+                        <p> No dudes en expresar tus opiniones para ello  </p>
+                        <a href="{% url 'account_login' %}" class="btn btn-success">Registrate </a>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('ruta/a/la/imagen2.jpg');">
-                    <div class="col-md-5 p-lg-5 mx-auto my-5">
-                        <h1 class="display-4 fw-normal">ZTEAM</h1>
-                        <p class="lead fw-normal">Ya puedes revisar la gran variedad de juegos que se encuentran alojados en esta pagina</p>
-                        <a class="btn btn-outline-primary" href="{% url 'lista_juegos'%}">Lista de Juegos</a>
-                    </div>
-                   
-                </div>
-                <div class="carousel-item" style="background-image: url('ruta/a/la/imagen3.jpg');">
-                    <div class="col-md-5 p-lg-5 mx-auto my-5">
-                        <h1 class="display-4 fw-normal">Loremp</h1>
-                        <p class="lead fw-normal">Ya puedes revisar la gran variedad de juegos que se encuentran alojados en esta pagina</p>
-                        <a class="btn btn-outline-primary" href="{% url 'lista_juegos'%}">Lista de Juegos</a>
+                <div class="carousel-item">
+                    <img src="{% static 'img/programacion.png' %}" class="d-block w-100" alt="Imagen 3">
+                    <div class="carousel-caption d-none d-md-block" style="position: absolute; top: 50%; transform: translateY(-50%);">
+                        <h3>Nosotros</h3>
+                        <p> ¿ Tienes problemas , dudas o simple curiosidad ? , pues visita</p>
+                        <a href="{% url 'sobre_nosotros' %}" class="btn btn-info">Nosotros</a>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+       
         
     </div>
     <div class="d-md-flex flex-md-equal w-100 - ">
         <div class="col-md-5 p-lg-5 mx-auto my-5 bg-dark text-white">
             <h1 class="display-4 fw-normal">Registrate</h1>
             <p class="lead fw-normal">Para gosar de todas las características de las paginas </p>
-            <a class="btn btn-outline-secondary" href="{% url 'account_logout' %}">Registrate</a>
+            <a class="btn btn-secondary" href="{% url 'account_logout' %}">Registrate</a>
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
