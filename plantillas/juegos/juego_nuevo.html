@@ -1,0 +1,42 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block titulo %} - Nuevo Juego {% endblock titulo %}
+
+{% block contenido %}
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+    </div>
+{% endblock contenido %}
+
+{% block extra_scripts %}  
+  <script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            tags: true,
+            createTag: function (params) {
+                return {
+                    id: params.term,
+                    text: params.term,
+                    newOption: true
+                };
+            },
+            templateResult: function (data) {
+                var $result = $("<span></span>");
+
+                $result.text(data.text);
+
+                if (data.newOption) {
+                    $result.append(" <em>(nuevo)</em>");
+                }
+
+                return $result;
+            }
+        });
+    });
+  </script>
+{% endblock extra_scripts %}

@@ -6,12 +6,15 @@
 {% block contenido %}
    
     <div class="book-detail" >
-        
         <h2> <a href=""> {{ juego.titulo }} </a> </h2> 
         <p> sinopsis : {{ juego.sinopsis }} </p>
         <p> Precio : {{ juego.precio }}</p>
 
-       
+        <ul>
+            {% for categoria in juego.categorias.all %}
+                <li>{{ categoria.nombre }}</li>
+            {% endfor %}
+        </ul>
     </div>
 
    

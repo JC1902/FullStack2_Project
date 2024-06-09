@@ -1,14 +1,26 @@
 {% extends '_base.html' %}
 
-
 {% block titulo %} - Juegos {% endblock titulo %}
 
 {% block contenido %}
-    <h1> Listado de Juegos </h1>
+    <div>
+        <a class="btn btn-outline-primary text-black border-primary px-3 py-2 rounded me-3" href="{% url 'juego_nuevo' %}">Agregar Juego</a>
+    </div>
+    <div>
+        <h2>Filtrar por Categoría:</h2>
+        <div class="d-flex flex-row">
+            {% for categoria in categorias %}
+                <a class="btn btn-outline-secondary me-2 mb-2" href="{% url 'filtrar_juegos_por_categoria' categoria.id %}">{{ categoria.nombre }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <h1>Listado de Juegos</h1>
     {% for juego in lista_juegos %}
         <div>
-            <h2> <a href="{{ juego.get_absolute_url }}">{{ juego.titulo }}</a></h2>
+            <h2><a href="{{ juego.get_absolute_url }}">{{ juego.titulo }}</a></h2>
+            <p>{{ juego.sinopsis }}</p>
+            <p>Precio: {{ juego.precio }}</p>
+            <p>Categorias: {{ juego.categoria }}</p>
         </div>
     {% endfor %}
-    
 {% endblock contenido %}

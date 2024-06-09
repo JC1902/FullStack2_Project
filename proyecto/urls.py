@@ -24,6 +24,7 @@ urlpatterns = [
     # path('cuentas/', include('cuentas.urls')),
     path('cuentas/', include('allauth.urls')),
     path('juegos/' , include( 'juegos.urls')),
+    path('juegos/', include('django_select2.urls')),
 ]
 
 if settings.DEBUG:
