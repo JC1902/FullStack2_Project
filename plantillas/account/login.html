@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load socialaccount %}
 {% load crispy_forms_tags %}
 
 {% block titulo %} - Iniciar Sesión {% endblock titulo %}
@@ -10,7 +11,8 @@
             {{ form | crispy }}
             <button type="submit" class="btn btn-success">Acceder</button>
             <br>
-            <p>No tienes una cuenta, presiona <a href="{% url 'signup' %}">aquí</a></p>
+            <p>No tienes una cuenta, presiona <a href="{% url 'account_signup' %}">aquí</a></p>
+            <p>Iniciar sesión con <a href="{% provider_login_url 'github' %}">Github</a></p>
         </form>
 
     </div>

@@ -22,10 +22,18 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('paginas.urls')),
-    path('cuentas/', include('django.contrib.auth.urls')),
-    path('cuentas/', include('cuentas.urls')),
+    # path('cuentas/', include('django.contrib.auth.urls')),
+    # path('cuentas/', include('cuentas.urls')),
+    path('cuentas/', include('allauth.urls')),
     path('juegos/' , include( 'juegos.urls')),
-]  + static (
+] + static (
     settings.MEDIA_URL,
     document_root = settings.MEDIA_ROOT
 )
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
