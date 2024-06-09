@@ -2,6 +2,7 @@
 
 
 .carousel-item img {
+   
     height: 500px; 
     object-fit: cover; 
 }
@@ -28,36 +29,3 @@
 }
 
 
-
-.container-custom {
-    height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.form-container {
-    width: 100%;
-    max-width: 500px; 
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-}
-
-
-.imagen_integrante {
-    max-height: 250px;
-    width: auto;
-}
-
-.texto_git {
-    text-decoration: none;
-    font-size: large;
-    padding: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-}
