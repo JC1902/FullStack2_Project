@@ -2,8 +2,18 @@
 
 
 .carousel-item img {
-   
     height: 500px; 
     object-fit: cover; 
 }
 
+.imagen_integrante {
+    max-height: 250px;
+    width: auto;
+}
+
+.texto_git {
+    text-decoration: none;
+    font-size: large;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
