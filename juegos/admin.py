@@ -1,9 +1,17 @@
 from django.contrib import admin
-from .models import Juego, Categoria
+from .models import Juego, Categoria , Resenha
 # Register your models here.
 
 
+class ResenhaEnLinea ( admin.TabularInline ):
+    model = Resenha
+
 class JuegoAdmin ( admin.ModelAdmin ):
+    inlines = (
+
+      ResenhaEnLinea,
+    )
+
     list_display = ( 'titulo' , 'sinopsis' , 'precio' )
     
 class CategoriaAdmin( admin.ModelAdmin ):

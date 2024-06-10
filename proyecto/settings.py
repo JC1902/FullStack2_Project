@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
     'debug_toolbar',
     'django_select2',
 
@@ -87,6 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -179,12 +181,26 @@ SOCIALACCOUNT_PROVIDERS = {
             "client_id": "Ov23liTla7md3ewQ0fuc",
             "secret": "44eee86ed6198425aead613c41f08beb90a0165b",
         }
-    }
+    },
+
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    },
 }
 
 #Estilos a los formularios con crispy. Instalacion de bootstrap
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+MEDIA_URL = '/recursos/'
+MEDIA_ROOT=BASE_DIR / 'recursos'
 #Redireccion de sitios
 LOGIN_REDIRECT_URL = 'inicio'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'inicio'

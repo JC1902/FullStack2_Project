@@ -9,10 +9,11 @@
         <h2>Iniciar Sesión</h2>
         <form method="post">{% csrf_token %}
             {{ form | crispy }}
-            <button type="submit" class="btn btn-success">Acceder</button>
             <br>
+            <button type="submit" class="btn btn-success">Acceder</button>
+            <br><br>
             <p>No tienes una cuenta, presiona <a href="{% url 'account_signup' %}">aquí</a></p>
-            <p>Iniciar sesión con <a href="{% provider_login_url 'github' %}">Github</a></p>
+            <p>Iniciar sesión con <a href="{% provider_login_url 'github' %}">Github</a> o <a href="{% provider_login_url 'google' %}">Google</a></p>
         </form>
 
     </div>

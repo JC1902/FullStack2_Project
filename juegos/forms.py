@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Juego, Categoria
+from .models import Juego, Categoria, Resenha
 from django_select2.forms import ModelSelect2MultipleWidget
 
 class FormularioCategoria( forms.ModelForm ):
@@ -33,3 +33,11 @@ class FormularioJuego( forms.ModelForm ):
         fields = ['titulo', 'sinopsis', 'precio', 'categoria_principal', 'categoria_relacionada']
     
 
+class FormularioNuevaResenha(forms.ModelForm):
+    class Meta:
+        model = Resenha
+        fields = ['resenha']
+        
+        widgets = {
+            'resenha': forms.Textarea(attrs={'rows': 2, 'cols': 125}),
+        }
