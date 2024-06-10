@@ -4,10 +4,13 @@
 {% block titulo %} - Cerrar Sesión {% endblock titulo %}
 
 {% block contenido %}
+<div class="container">
     <h2>Cerrar Sesión</h2>
     <p>¿Desea salir de la sesión actual?</p>
     <form method="post" action="{% url 'account_logout' %}">{% csrf_token %}
         {{ form|crispy }}
         <button type="submit">Salir</button>
     </form>
+</div>
+    
 {% endblock contenido %}
