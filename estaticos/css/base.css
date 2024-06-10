@@ -7,7 +7,6 @@
     object-fit: cover; 
 }
 
-
 .container-custom {
     height: 100vh; 
     display: flex;
@@ -28,4 +27,13 @@
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+.imagen_integrante {
+    max-height: 250px;
+    width: auto;
+}
 
+.texto_git {
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
