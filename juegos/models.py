@@ -38,7 +38,7 @@ class Juego( models.Model ):
     titulo = models.CharField ( max_length=200 )
     sinopsis = models.CharField ( max_length=250 )
     precio = models.DecimalField ( max_digits=7 , decimal_places=2 )
-    categoria = models.ManyToManyField( Categoria, related_name='juegos', blank=True )
+    categorias = models.ManyToManyField( Categoria, related_name='juegos', blank=True )
     portada = models.ImageField( upload_to='portadas/' , blank=True)
 
 
