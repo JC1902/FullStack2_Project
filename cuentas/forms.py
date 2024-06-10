@@ -5,6 +5,7 @@ class FormularioCreacionUsuario( UserCreationForm ):
     class Meta( UserCreationForm ):
         model = Usuario
         fields = ( 'username', 'email', 'edad' )
+        
 
 class FormularioModificacionUsuario( UserChangeForm ):
     class Meta( UserChangeForm ):

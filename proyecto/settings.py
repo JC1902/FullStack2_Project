@@ -167,14 +167,18 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.email.com'
+DEFAULT_FROM_EMAIL = 'noreply@micorreo.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'alu.20130811@correo.itlalaguna.edu.mx'
-EMAIL_HOST_PASSWORD = '***'
+EMAIL_HOST_USER = 'alu.20130849@correo.itlalaguna.edu.mx'
+EMAIL_HOST_PASSWORD = 'Viral=100K'
+
 
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
