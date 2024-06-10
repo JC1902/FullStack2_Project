@@ -16,5 +16,9 @@
             <p>Iniciar sesión con <a href="{% provider_login_url 'github' %}">Github</a> o <a href="{% provider_login_url 'google' %}">Google</a></p>
         </form>
 
+        <p> <a href="{% url 'account_reset_password' %}">Olvidé mi contraseña</a></p>
+
+        <p> <a href="{% url 'account_change_password' %}">cambair contrasena</a></p>
+
     </div>
 {% endblock contenido %}
